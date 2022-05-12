@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            let parentdiv = document.getElementById("textHolder");
+            let divel = document.createElement("div"); //새로운 태그 생성
+            divel.appendChild(document.createTextNode("CBD Developer 8"));
+            parentdiv.appendChild(divel);
+        }
+        function remove(){
+            let parentdiv = document.getElementById("textHolder");
+            if(parentdiv.lastChild)
+            parentdiv.removeChild(parentdiv.lastChild);
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="show()">텍스트 추가🎭</button>
+    <button onclick="remove()">텍스트 삭제🧨</button>
+    <div id = "textHolder"></div>
+</body>
+</html>

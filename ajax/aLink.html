@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function url(addr){
+            document.getElementById("thelink").href = addr;
+        }
+        function display(){
+            alert("display 함수가 호출되었습니다.");
+        }
+    </script>
+</head>
+<body>
+    <a id = "thelink">클릭하세요💡</a>
+    <button onclick="url('https://www.kma.go.kr')">기상청</button>
+    <button onclick="url('https://www.yahoo.com')">야후</button>
+    <button onclick="url('javascript:display()')">함수 호출</button>
+</body>
+</html>

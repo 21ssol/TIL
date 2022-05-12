@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function cssapply(cssName){ //cssName은 문지열 전달
+            document.getElementById('content').className = cssName;
+        }
+    </script>
+
+    <style>
+        .greenText {
+            padding: 0px 0px 4px 0px;
+            margin: 0px;
+            font: bold italic 26px Georgia;
+            color: #7e9e50;
+        }
+        .redText {
+            padding: 0px 0px 4px 0px;
+            margin: 0px;
+            font: bold italic 26px Georgia;
+            color: #ff493f;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id = "content">
+        JAVA-MySQL, JSP-Oracle, MVC-Struts, OJT
+    </div>
+    <button onclick="cssapply('greenText')">CSS적용 (녹색 텍스트)</button> <!--greenTest 는 클래스명-->
+    <button onclick="cssapply('redText')">CSS적용 (적색 텍스트)</button>
+    <button onclick="cssapply('hide')">CSS적용 (감추기)</button>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let count = 0;
+            let divel = document.getElementById("divHolder");
+
+            for(let i=0; i<divel.childNodes.length; i++){
+                if(divel.childNodes[i].nodeType == 1){ //태그인지 검사(1은 태그가 맞으면)
+                    count ++; //태그의 갯수 증가
+                }
+            }
+            console.log(`자식tag 노드의 갯수는: ${count}`);
+            alert("자식 엘레멘트(태그) 노드의 갯수는: " + count);
+        }
+    </script>
+</head>
+<body>
+    <div id = "divHolder">
+        <!--ajax 정복 루트-->
+        <div>HTML</div>
+        <div>JavaScript</div>
+        <div>DOM</div>
+        <div>Ajax</div>
+    </div>
+</body>
+</html>

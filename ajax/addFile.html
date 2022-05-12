@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            // let parentdiv = document.getElementById("textHolder");
+            // let divel = document.createElement("div"); //새로운 태그 생성
+            // divel.appendChild(document.createTextNode("파일추가"));
+            // parentdiv.appendChild(divel);
+
+            let file = document.getElementById("num");
+            let add = document.createElement("div"); //새로운 태그 생성
+            add.appendChild(document.createTextNode("파일추가"));
+            
+            let f = document.getElementsByTagName("div");
+            let flist = num.length;
+
+            for(let i = 0; i < f.length; i++)  {
+              console.log(f[i].innerText);
+            }
+            file.appendChild(add);
+        }
+        
+        function remove(){
+            
+        }
+
+    </script>
+</head>
+<body>
+    <button name="btnAdd" onclick="add()">파일 선택 추가🎈</button>
+    <button name="btnAdd" onclick="remove()">파일 선택 제거🧨</button>
+    <br>
+
+    <div id = "textHolder">하이</div>
+    <div id = "num">파일 선택</div>
+    <input type="file" name="file">
+    </div>
+</body>
+</html>

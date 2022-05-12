@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello World!</p>
+    <div id = "main">
+        <p>The DOM is very useful🎈</p>
+        <p>This example demonstrate the <b>getElementsTagName</b> method!</p>
+    </div>
+    <p id = "demo"></p>
+
+    <script>
+        let x = document.getElementById("main");
+        let y = x.getElementsByTagName("p"); //x에서 검색해라(div안에서 검색)
+
+        document.getElementById("demo").innerHTML = 
+        'The first paragraph (index 0) inside "main" is: ' + 
+        y[0].innerHTML;
+    </script>
+</body>
+</html>

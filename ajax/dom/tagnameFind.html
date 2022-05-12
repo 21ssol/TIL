@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello World!</p>
+    <p>The DOM is very useful.🎇</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method </p>
+
+    <p id = "demo"></p>
+    <script>
+        let x = document.getElementsByTagName("p"); //p태그로 접근, x는 배열이다.
+        console.log(x.length);
+        document.getElementById("demo").innerHTML = 
+        'The first paragraph (index 1) is : ' + x[1].innerHTML;
+    </script>
+</body>
+</html>

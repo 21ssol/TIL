@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script>
+        function setDiv(){
+            let str = "<table><tr><td>";
+            str += "A0001 - 컴퓨터 A<br>";
+            str += "A0002 - 컴퓨터 B<br>";
+            str += "A0003 - 컴퓨터 C<br>";
+            str += "A0004 - 컴퓨터 D<br>";
+            str += '</td></tr></table>';
+            document.getElementById("div1").innerHTML = str;
+        }
+        function removeDiv(){
+            document.getElementById("div1").innerHTML = '';
+        }
+    </script>
+</head>
+<body>
+    <div id = 'div1'>*****</div><br>
+    <button type="button" onclick="setDiv()">테이블 생성</button>
+    <button type="button" onclick="removeDiv()">테이블 삭제</button> 
+</body>
+</html>

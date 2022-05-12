@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){  //페이지가 로딩될 떄
+            let divel = document.getElementById("divHolder");
+            console.log(`divHolder div의 자식노드의 갯수: ${divel.childNodes[3]}`);
+            alert("divHolder div의 자식노드의 갯수는 : "+ 
+            divel.childNodes.length);
+        }
+    </script>
+</head>
+<body>
+    <div id = "divHolder">
+        <!--ajax 정복 루트-->
+        <div>HTML</div>
+        <div>JavaScript</div>
+        <div>DOM</div>
+        <div>Ajax</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            document.getElementById("chkLCD").checked = true;
+        }
+        function uncheck(){
+            document.getElementById("chkLCD").checked = false;
+        }
+        function check2(id){
+            document.getElementById(id).checked = true;
+        }
+        function uncheck2(id){
+            document.getElementById(id).checked = false;
+        }
+
+        function getOption(){
+            let lcd = document.getElementById("chkLCD");
+            let ram = document.getElementById("chkRAM");
+            let printer = document.getElementById("chkPrinter");
+            let str='';
+
+            if (lcd.checked == true){
+                str = lcd.value + " ";
+            }
+
+            if (ram.checked == true){
+                str += ram.value + " ";
+            }
+
+            if (printer.checked == true){
+                str += printer.value + " ";
+            }
+
+            document.getElementById("opt").value = str;
+        }
+
+    </script>
+</head>
+<body>
+    <p>상품 옵션 선택</p>
+    <p>
+        <input type="checkbox" id="chkLCD" value="LCD 24">
+        <button onclick="check()">LCD 24 선택</button>
+        <button onclick="uncheck()">LCD 24 선택 안함</button>
+    </p>
+    <p>
+        <input type="checkbox" id="chkRAM" value="RAM 8G">
+        <button onclick="check2('chkRAM')">RAM 선택</button>
+        <button onclick="uncheck2('chkRAM')">RAM 선택 안함</button>
+    </p>
+    <p>
+        <input type="checkbox" id="chkPrinter" value="프린터">
+        <button onclick="check2('chkPrinter')">프린터 선택</button>
+        <button onclick="uncheck2('chkPrinter')">프린터 선택 안함</button>
+    </p>
+    <p>
+        <button name="btnOpt" onclick="getOption()">선택한 옵션</button>
+        <input type="text" id="opt" size="40">
+    </p>
+    
+</body>
+</html>

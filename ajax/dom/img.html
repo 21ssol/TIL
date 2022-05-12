@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function imgshow(){
+            let img = document.createElement("img");
+            img.src = "http://www.apache.org/images/ac2008us_343x114.jpg";
+
+            let holder = document.getElementById("imgPlaceHolder");
+            holder.appendChild(img); //자식요소로 이미지를 누를때마다 추가
+            
+            // let str = "<img src='http://www.apache.org/images/ac2008us_343x114.jpg'>"
+            // holder.innerHTML=str;  //한번만 실행
+        }
+    </script>
+</head>
+<body>
+    <button onclick="imgshow()" type="button">이미지 표시</button>
+    <div id = "imgPlaceHolder"></div>
+</body>
+</html>

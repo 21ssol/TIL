@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            background-color: bisque;
+            height: 100vh;
+            display: flex;  /*행방향*/
+            justify-content: center; /*가운데로 정렬*/
+        }
+        .mainItem1 {
+            margin: 100px 10px 0 0;  /*순서는 위부터 시계방향*/
+            width: 700px;
+            height: 470px;
+            background: aqua;
+        }
+        .mainItem2 {
+            margin-top: 100px;
+            width: 100px;
+            height: 450px;
+            background: white;
+            display: flex; /*가로로 보여지긴함*/
+            flex-direction: column; /*중심축을 열방향으로 선언*/
+            justify-content: space-between; /*앞 뒤 공간 없이 중간에만 간격*/
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+        let img1 = document.createElement("img");
+        img1.src ="images/showImg/01.jpg";
+        img1.width=100;
+        img1.height=90;
+        var show1Div = document.getElementById("show1");
+        show1Div.appendChild(img1);
+        
+            let img2 = document.createElement("img");
+            img2.src = "images/showImg/02.jpg";
+            img2.width = 100;
+            img2.height = 90;
+            let show2Div = document.getElementById("show2");
+            show2Div.appendChild(img2);
+        
+            let img3 = document.createElement("img");
+            img3.src = "images/showImg/03.jpg";
+            img3.width = 100;
+            img3.height = 90;
+            let show3Div = document.getElementById("show3");
+            show3Div.appendChild(img3);
+
+            let img4 = document.createElement("img");
+            img4.src = "images/showImg/04.jpg";
+            img4.width = 100;
+            img4.height = 90;
+            let show4Div = document.getElementById("show4");
+            show4Div.appendChild(img4);
+
+            let img5 = document.createElement("img");
+            img5.src = "images/showImg/05.jpg";
+            img5.width = 100;
+            img5.height = 90;
+            let show5Div = document.getElementById("show5");
+            show5Div.appendChild(img5);
+        }
+
+        function show(div){
+            let temp = div.firstChild; //이미지태그
+            let mainImg = document.createElement('img');
+            mainImg.src = temp.src;
+            mainImg.width = 700;
+            mainImg.height=470;
+            let showMain = document.getElementById('showMain');
+            showMain.innerHTML="";
+            showMain.appendChild(mainImg);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="mainItem1" id="showMain"></div>
+        <div class="mainItem2">
+            <div class="item item1" id="show1" onclick="show(this)"></div>
+            <div class="item item2" id="show2" onclick="show(this)"></div>
+            <div class="item item3" id="show3" onclick="show(this)"></div>
+            <div class="item item4" id="show4" onclick="show(this)"></div>
+            <div class="item item5" id="show5" onclick="show(this)"></div>
+        </div>
+    </div>
+</body>
+</html>
