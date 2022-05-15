@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JSON Object Creation in JavaScript</h2>
+    <p id="demo"></p>
+
+    <script>
+        let text = '{"name":"John","street":"Oslo West","phone":"111 11111"}';  //문자열을 넣어줌 '' 
+        console.log(typeof(text));
+        let obj = JSON.parse(text);
+        console.log(typeof(obj));  //json으로 변환하여 .으로 담을 수 있음
+
+        //innerHTML > html화면에 보여줌
+        document.getElementById('demo').innerHTML = 
+        obj.name+'<br>' + obj.street + '<br>' + obj.phone;
+
+        let text2 = JSON.stringify(obj);
+        console.log(typeof(text2));  //다시 json형태로 변환
+    </script>
+</body>
+</html>

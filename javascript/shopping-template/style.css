@@ -1,0 +1,97 @@
+:root {  /* 전역으로 변수를 선언하려고 할 때 */
+  /* color */
+  --color-black: #3f454d;  /* var로 한번에 선언 */
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+  /* size */
+  --base-space: 8px;
+  --size-button: 60px;
+  --size-border: 4px;
+  --size-thumbnail: 50px;
+  --font-size: 18px;
+  /* animation */
+  --size-animation-duration: 300ms;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column; /* 컬럼으로 설정해서 세로로 보여지도록 함 */
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform var(--size-animation-duration) ease; /* 애니메이션 효과*/
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1); /* 크기 변경 */
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent; /*투명*/
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--size-animation-duration) ease; /* 애니메이션 효과*/
+  margin-right: var(--base-space);
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) * 2); /* 정사각형 모양이 되도록 */
+  border-radius: var(--size-border); /* 모서리를 둥굴게 */
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+.yellow {
+  background-color: var(--color-yellow);
+}
+.pink {
+  background-color: var(--color-pink);
+}
+
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none; /* 리스트 표기 안되게 함 */
+  padding-left: 0; /* 왼쪽에 붙여서 나오도록 설정 */
+  overflow-y: scroll; /*items만 스크롤이 되도록한다, ul에 삽입 */
+}
+
+.item {  
+  background-color: var(--color-white);
+  display: flex;  /* 가로로 가야함 (이미지, span태그 글씨) */
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space); /* item의 간격을 조절한다.  */
+}
+
+.item__thumbnail { 
+  width: var(--size-thumbnail); /* 이미지의 크기 */
+  height: var(--size-thumbnail);
+}
+
+.item__description {
+  margin-left: var(--base-space);  /* 이미지와 텍스트의 사이간격 */
+  font-size: var(--font-size);
+}

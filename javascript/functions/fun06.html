@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script src="utility.js"></script>
+</head>
+<body>
+    <h1>inFinite 함수 예제</h1>
+    <script>
+        let temp1;
+        temp1 = prompt('값을 입력하세요.', 100);
+        console.log(temp1);
+        if(isFinite(temp1) == true) {  //숫자가 유한한 숫자인지 확인
+            pl(`${temp1}은 유한한 숫자`);
+        } else {
+            pl(`${temp1}은 무한대이거나 숫자가 X`);
+        }
+    </script>
+</body>
+</html>

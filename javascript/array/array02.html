@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>The push, pop method, unshift, shift </p>
+   <button onclick="myFunction()">Try it!</button>
+    <p id = "demo"></p>
+    <script>
+        let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+        let citrus = fruits.slice(1,3);
+
+        document.getElementById("demo").innerHTML= `${fruits}<br> ${citrus}`;
+
+        function myFunction(){
+           fruits.splice(1);
+            document.getElementById("demo").innerHTML = fruits;
+        }
+    </script>
+</body>
+</html>

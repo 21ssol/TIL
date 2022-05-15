@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h2>do-while 문의 사용 ! </h2>
+    <hr>
+    <script>
+
+    let innum, i=1;
+    innum = prompt("1부터 9까지의 수를 입력하세요", 2);
+    pl(`입력한 숫자 ${innum}에 대한 구구단 <br><br>`);
+
+    do{
+        pl(`${innum} X ${i} = ${innum*i}`);
+        i++;
+    } while(i<=9);
+    function pl(str){
+        document.write(`${str} <br>`);
+    }
+
+    </script>
+    
+</body>
+</html>

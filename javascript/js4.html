@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 22px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>while 문의 사용</h2>
+    <hr>
+    <script>
+
+        let innum, i;
+
+        innum = prompt("1부터 9사이의 수를 입력하세요!", "1");
+        pl(`입력한 숫자: ${innum} 에 대한 구구단<br>`);
+        i= 1;
+
+        while (i<=9){
+            pl(`${innum} X ${i} = ${(innum*i)}`);
+            i++;
+        }
+        function pl(str){
+            document.write(`${str} <br>`);
+        }
+    </script>
+    
+</body>
+</html>

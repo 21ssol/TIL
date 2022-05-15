@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Counter(){  //생성자 함수는 대문자로 많이 씀!
+            this.sum = 0;
+            this.count = 0;
+        }
+        Counter.prototype.add = function(array){
+            array.forEach(entry => {
+                this.sum += entry;  //Counter객체에 있는 sum
+                ++this.count;    //count의 값이 먼저 증가
+            }, this);  // 이 this는 counter
+        } //여기까지 선언
+
+        let obj = new Counter();
+        obj.add([2,5,9]);
+        console.log(`count: ${obj.count}`);
+        console.log(`sum: ${obj.sum}`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

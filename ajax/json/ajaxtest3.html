@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function loadDoc(){
+            let xhttp;
+            if(window.XMLHttpRequest){
+                xhttp = new XMLHttpRequest();
+            } else {
+               // code for IE6, IE5
+                xhttp = ActiveXObject("Microsoft.XMLHTTP");
+            } 
+
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState == 4 && xhttp.status == 200){  //객체로 바꿔야함
+                    console.log(`responseText: ${xhttp.responseText}, type: ${typeof xhttp.responseText}`);
+
+                    let result = JSON.parse(xhttp.responseText);  //역직렬화, result는 전체를 말함
+                    if(result.code === 'success'){
+                        let marr = result.data.member;  //배열 array
+                        console.log(marr.length);  //배열의 길이 보기
+
+                        document.getElementById("demo").innerHTML='';
+                        for(let i=0; i<=marr.length; i++){
+                            let idx = marr[i]['id'];
+                            let name = marr[i].name;
+                            let sno = marr[i].sno;
+                            let txt = idx + "[" + name + "]" + sno + ",";
+
+                            document.getElementById("demo").append(txt);
+                        }
+                    } 
+                }else{
+                    //alert(xhttp.status);
+                }
+
+            };
+            xhttp.open("GET","member.jsp",true);
+            xhttp.send();
+         }
+    </script>
+</head>
+<body>
+    <p id='demo'>Let AJAX change this text.</p>
+    <button onclick='loadDoc()'>Change Content</button>
+</body>
+</html>

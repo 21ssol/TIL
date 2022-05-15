@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script src="utility.js"></script>
+</head>
+<body>
+    <h1>문자열 함수 예제</h1>
+    <hr>
+    <script>
+        let wc = 'KOREA VICTORY';
+        let prn = wc.charAt(0); //글자에서 n-1번째를 추출!(1개만)
+        pl(prn);
+        pl(wc.charAt(1));
+        pl(wc.charAt(2));
+        pl();
+        pl(`V의 위치 : ${wc.indexOf('V')}`);
+        pl(`R이 마지막으로 나타는 위치 ${wc.lastIndexOf('R')}`);
+        pl(`문자열의 길이: ${'대한민국 WBC'.length}`);
+
+        let tot = 10;
+        pl(`tot+tot: ${tot+tot}`);
+        pl(`parseInt: ${parseInt('10') + parseInt('10')}`);
+    </script>
+</body>
+</html>

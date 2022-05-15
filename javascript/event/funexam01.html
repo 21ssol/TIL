@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script>
+        function check(f) {
+            let row = f.row.value;
+            let col = f.col.value;
+            console.log(`row: ${row}, col: ${col}`);
+            if(isFinite(row)==false) {
+                alert("숫자만 입력하세요.");
+                f.row.value = '';
+                f.row.focus();
+                return false;
+            } else if(row<3 || row>10){
+                alert("3~10 사이의 값만 입력하세요.");
+                f.row.value = '';
+                f.row.focus();
+                return false;
+            } else if(isFinite(col)==false) {
+                alert("숫자만 입력하세요.");
+                f.col.value = '';
+                f.col.focus();
+                return false;
+            } else if(col<3 || col>10){
+                alert("3~10 사이의 값만 입력하세요.");
+                f.col.value = '';
+                f.col.focus();
+                return false;
+            } else {
+                makeTable(row, col); //maketable 함수 호출
+                return false;
+            }
+        }
+        function makeTable(row, col) {
+            // document.myform.row.value; makeTable에 f 없으면 호출 가능
+            //f.row.value;  makeTable에 f가 있을경우
+            console.log(`row: ${row}, col: ${col}`);
+            let html = '<table><tr>';
+                for(let j=0; j<col; j++){
+                 html += `<th>${j+1}</th>`;
+                    } html += '</tr>';
+                 for (let i=0; i<row; i++){
+                    html += '<tr>';
+                        for(let j=0; j<col; j++){
+                          html += '<td>&nbsp</td>';
+                    }
+                html += '</tr>';
+             }
+                html += '</table>';
+            
+                let panel = document.getElementById('panel').innerHTML = html;
+        }
+
+    </script>
+</head>
+<body>
+    <form name = 'myform' onsubmit="return check(this)"> 
+        행의 수: <input type="text" name="row" id = "row" value="5" size="20">
+        <br>
+        열의 수: <input type="text" name = 'col' id="col" value="5" size="20">
+        <br>
+        <button>테이블 생성</button> <!--버튼일경우 form 에 onsubmit, return check(this)-->
+    </form>
+    <div id = "panel"></div>
+</body>
+</html>

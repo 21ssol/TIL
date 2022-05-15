@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script src="utility.js"></script>
+</head>
+<body>
+    <h2>split() 함수 </h2>
+    <hr>
+    <script>
+        let dtolist = '가길동, 100, 90 / 나길동, 100, 90 / 다길동, 100, 90';
+        let arraydto = dtolist.split("/");
+        console.log(`배열길이: ${arraydto.length}`);
+        arraydto.forEach((dto)=>pl(dto));
+
+        pl('<hr>');
+        pl('<h1><성적 계산 목록></h1>');
+
+        let i=0;
+        arraydto.forEach(dto => {
+            let str = dto.split(',');
+            pl(`성명: ${str[0]}`);
+            pl(`영어 점수: ${str[1]}`);
+            pl(`수학 점수: ${str[2]}`);
+
+            let eng = parseInt(str[1]);
+            let math = parseInt(str[2]);
+
+            pl(`총점: ${eng + math}`);
+            pl(`평균: ${(eng+math)/2}`);
+            pl('--------------------------------');
+        });
+    </script>
+</body>
+</html>

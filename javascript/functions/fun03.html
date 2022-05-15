@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script src="utility.js"></script>
+    <script>
+        function adding(x,y){
+            let z = x + y;
+            return z;
+        }
+    </script>
+</head>
+<body>
+    <h1>리턴이 있는 함수 !</h1>
+    <hr>
+    <script>
+        let a = 10;
+        let b = 20;
+        let c = adding(a,b);
+        pl(`두 변수의 합은 ${c}`);
+
+        a = '야식이 건강 해치는 진짜 이유';
+        b = '<br> - 소화불량, 숙면 방해, 비만유발, 식도열 발생...';
+        c = adding(a,b);
+        pl(`두 변수의 합: ${c}`);
+    </script>
+</body>
+</html>

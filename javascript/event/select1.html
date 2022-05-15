@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script>
+        function ansquChange(f) {
+            let frm = document.frmData;
+            let str = f.title.value + f.ansqu.options[f.ansqu.selectedIndex].text;
+            f.title.value = str;
+            f.title.focus();
+            frm.ansqu.value = f.ansqu.options[f.ansqu.selectedIndex].value;
+        }
+        function partChange(f){
+            let frm = document.frmData;
+            let str = f.title.value + f.pt.options[f.pt.selectedIndex].text;
+            f.title.value = str;  //value는 주로 사용자가 입력할 수 있는 태그, 그 외는 innerHTML
+            f.title.focus();
+            frm.pt.value = f.pt.options[f.pt.selectedIndex].value;
+        }
+    </script>
+</head>
+<body>
+    <form name="frmSelect">
+        <select name="ansqu" onchange="ansquChange(this.form)">
+            <option value="">[종류선택]</option>
+            <option value='A001'> [질문] </option>     
+            <option value='A002'> [답변] </option>
+            <option value='A003'> [참고] </option>
+            <option value='A004'> [공지] </option>
+            <option value='A005'> [추천] </option>
+            <option value='A006'> [선택 안함] </option>
+        </select>
+        <select name="pt" onchange="partChange(this.form)" >
+            <option value=''> [분야선택] </option>
+            <option value='P001'> [JAVA] </option>
+            <option value='P002'> [JSP] </option>
+            <option value='P003'> [Spring] </option>
+            <option value='P004'> [JavaScript] </option>
+            <option value='P005'> [ORACLE] </option>
+            <option value='P006'> [선택 안함] </option>
+        </select>
+        <input type="text" name="title" size="85" class = "title" maxlength="100">
+    </form>
+    <hr>
+    <form name="frmData">
+        분야 선택 전송값: <input type="text" name="ansqu" value="" size="50">
+        <br>
+        언어 선택 전송값: <input type="text" name="pt" value="" size="50">
+    </form>
+</body>
+</html>

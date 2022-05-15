@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script>
+        function setUrl(no) {
+            if(no == 1){
+                document.regiform.url.value="https://www.daum.net/";
+            }else if(no == 2){
+                document.regiform.url.value="https://www.weather.go.kr/w/index.do";
+            } else if (no == 3){
+                document.regiform.url.value="http://www.kyobobook.co.kr/";
+            }
+        }
+        function sendit(){  
+         //value속성(form은 value많이 쓴다.)
+        //let str = document.regiform.url.value;
+        let str = document.getElementById("url").value;
+        console.log(`str: ${str}`);
+
+        // if (str != "https://"){
+        //     str  = "https://" + str;
+        // }
+        if(str.indexOf('https://') != 0){
+         str  = "https://" + str;
+        }
+        if(str == '') {
+            alert('주소를 입력하세요');
+            document.getElementById('url').focus();
+           // document.regiform.url.focus();  //마우스 포커스가 form으로 이동
+        } else{
+            location.href = str;
+        }
+    }
+    </script>
+</head>
+<body>
+    <form name="regiform">
+        <input type="text" id="url" name="url" size="50">
+        <a href="javascript:sendit();">주소 이동</a>
+        <button type="button" onclick="sendit()">주소 이동</button>
+        <button type="button" onclick="setUrl(1)">DAUM</button>
+        <button type="button" onclick="setUrl(2)">기상청</button>
+        <button type="button" onclick="setUrl(3)">교보문고</button>
+    </form>
+</body>
+</html>

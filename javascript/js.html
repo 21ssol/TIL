@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: gulim;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>연산자</h2>
+    <hr>
+    <script>
+        let i = 10;
+        let j = 3;
+
+        pl(`더하기: ${i + j}`);
+        pl(`빼기: ${i-j}`);
+        pl(`곱하기: ${i*j}`);
+        pl(`나머지: ${i%j}`);
+        pl(`나누기: ${i/j}`);
+
+        function pl(str){
+            document.write(`${str} <br><br>`);
+        }
+    </script>
+</body>
+</html>

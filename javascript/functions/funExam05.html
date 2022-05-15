@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Counting with a local variable.</p>
+    <button type="button" onclick="myFunction()">Count!</button>
+    <p id = "demo">0</p>
+
+    <script>
+        //클로저 내용, 중첩함수
+        let add = (function add(){
+            let counter = 0;  //지역변수 선언
+            return function(){ return counter +=1;};})();
+        
+
+        function myFunction(){
+            document.getElementById("demo").innerHTML=add();
+        }
+    </script>
+</body>
+</html>

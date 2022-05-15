@@ -1,0 +1,36 @@
+<!--라이브서버로 실행-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loadDoc(){
+            let xhttp;
+            if(window.XMLHttpRequest){
+                xhttp = new XMLHttpRequest();
+            } else {
+                //버전이 IE5, 6일 때,
+                xhttp = ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function(){
+                //4는 응답 완료, 200은 status 요청 정상처리
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                    alert(xhttp.responseText);
+                    document.getElementById("demo").innerHTML = 
+                    xhttp.responseText;
+                }
+            }; //함수를 끝내는 선언
+
+            xhttp.open("GET", "info.html", true);  //true 는 비동기 방식
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <p id ='demo'>Let AJAX change this text.</p>
+    <button onclick="loadDoc()">Change Content</button>
+</body>
+</html>

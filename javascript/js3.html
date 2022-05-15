@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h2>switch 문의 사용</h2>
+    <script>
+        let temp;
+        temp = prompt("현재의 계절을 입력하세요?\n(봄, 여름, 가을, 겨울)", "봄");
+
+        switch(temp){
+            case "봄":
+                document.write("봄이군요! 날씨가 따뜻해요😃");
+                break;
+            case "여름":
+                document.write("여름이네요 무척 더워요😫");
+                break;
+            case "가을":
+                document.write("가을이네요~ 날씨가 시원해요☺");
+                break;
+            case "겨울": 
+                document.write("겨울이네요 날씨가 추워요😣");
+                break;
+            default:
+                document.write("알수 없어요ㅠ");
+        }
+
+    </script>
+</body>
+</html>

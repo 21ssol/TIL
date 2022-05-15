@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let i = 0;
+        function add(){
+            let parentdiv = document.getElementById('textHolder');
+            let divel = document.createElement('div');
+            divel.appendChild(document.createTextNode(`파일 선택 ${++i}`)); 
+            let file = document.createElement('input');
+            file.type = 'file';
+            divel.appendChild(file);
+            parentdiv.appendChild(divel);
+        }
+        function del(){
+            let parentdiv = document.getElementById('textHolder');
+            if(i > 0){
+                 parentdiv.removeChild(parentdiv.lastChild);
+                 --i;  
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button name="btnAdd" onclick="add()">파일 선택 추가</button>
+    <button name="btnDel" onclick="del()">파일 선택 제거</button>
+<br>
+<div id="textHolder">
+
+</div>
+</body>
+</html>

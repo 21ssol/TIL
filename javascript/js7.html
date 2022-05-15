@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+        }
+        h2{
+            font-size: 26px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: rgb(243, 186, 166);
+
+        }
+    </style>
+</head>
+<body>
+    <h2>제어구조의 중첩</h2>  
+    <hr>
+    <table>
+            <script>
+                let i, j, result;
+                p('<table>');
+                p('<tr>')
+                for(let i=2; i<=9; i++){
+                    p(`<th> ${i} 단 </th>`);
+                }
+            p("</tr>");
+            p("<tr>");  //새로운 행 시작
+
+                for(let i=2; i<=9; i++){
+                    p("<td>");
+                        for(let j = 1; j<=9; j++){
+                            result = i*j;
+                            pl(`${i} X ${j} = ${result}`);
+                        }
+                        p('</td>');
+                }
+                p('</tr>');
+                p('</table>')
+                function p(str){
+                document.write(str);
+                }
+                function pl(str){
+                    document.write(`${str} <br>`);
+                }
+            </script>
+</body>
+</html>

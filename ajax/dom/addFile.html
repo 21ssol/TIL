@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let i = 1;
+
+        function add(){
+            let parentdiv = document.getElementById("file");
+            //div 요소 생성
+            let divel = document.createElement("div"); 
+            //input 타입 요소 생성
+            let input1 = document.createElement("input"); 
+
+            divel.appendChild(document.createTextNode("파일선택" + i));
+            input1.type = "file"; //속성을 파일로 지정
+ 
+            parentdiv.appendChild(divel);
+            parentdiv.appendChild(input1);
+            i++;
+
+        }
+        
+        function remove(){
+            let parentdiv = document.getElementById("file");
+            let divel = parentdiv.lastChild;
+            if(i<=1){
+                i=1;
+            }
+            parentdiv.removeChild(divel);
+            parentdiv = document.getElementById("file");
+            divel = parentdiv.lastChild;
+            parentdiv.removeChild(divel);
+            i--;
+        }
+
+    </script>
+</head>
+<body>
+    <button name="btnAdd" onclick="add()">파일 선택 추가🎈</button>
+    <button name="btnAdd" onclick="remove()">파일 선택 제거🧨</button>
+    <br>
+
+    <div id = "file"> </div>
+</body>
+</html>

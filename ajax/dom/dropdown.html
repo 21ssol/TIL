@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 대분류  const는 바뀔게 없는 값일 때 많이 쓴다.
+        const addressList = ["서울","인천","경기도","강원도"];
+        
+        // 중분류
+        const gugunListSeoul = ["노원구", "강남구", "구로구", "마포구"];
+        const gugunListIncheon = ["남동구", "부평구", "서구", "계양구"];
+        const gugunListKy = ["부천시", "시흥시", "안양시", "수원시"];
+
+        window.onload = function(){
+            //대분류값에 넣기
+            let sido = document.getElementById("sidoSelect");
+            //변수에 접근해서 옵션 태그에 밸류값들을 넣는다.
+            for(let i=0; i<addressList.length; i++){ //addressList 4번 반복
+                //옵션태그 만들기
+                let optionel = document.createElement('option');
+                //값에 접근하여 대입하기
+                optionel.value = addressList[i];
+                // appendChild를 통해 text를 만들기(배열의 값)
+                optionel.appendChild(document.createTextNode(addressList[i]));
+                // select의 옵션태그 안에다가 옵션 값들을 넣어줌
+                sido.appendChild(optionel);
+            }
+            let gugun = document.getElementById('gugunSelect');
+            let btnArea = document.getElementById('btnArea');
+            gugun.style.display = 'none';
+            btnArea.style.display = 'none';
+        }
+
+        function changeSidoSelect(){
+            let sido = document.getElementById("sidoSelect");
+            //옵션에서 선택한 인덱스 구하기
+            let idx = sido.options.selectedIndex;
+            //input type 텍스트 가져오기
+            let area = document.getElementById("area");
+            area.value=""; //area 값 지우기
+            gugunSelectFill(idx);
+        }
+
+        function gugunSelectFill(idx){
+            let data = null;
+            let gugun = document.getElementById("gugunSelect");
+            let btnArea = document.getElementById("btnArea");
+
+            if(idx == 0){
+                gugun.style.display="none";
+                btnArea.style.display="none";
+                return;  //그냥 끝난다. 더이상 실행X
+            }
+            if(idx == 1){data = gugunListSeoul}
+            if(idx == 2){data = gugunListIncheon}
+            if(idx == 3){data = gugunListKy}
+            if(idx == 4){
+                gugun.style.display="none";
+                btnArea.style.display="none";
+                alert("현재는 지원하지 않습니다.");
+                return;  //빠져나오기
+            }
+            //gugun은 중분류 셀렉트라서 지우기
+            gugun.innerHTML="";
+            gugun.innerHTML = `<option value="">중분류를 선택하세요</option>`;
+
+            for(let i=0; i<data.length; i++){
+                //중분류의 옵션 만들기
+                let optionel = document.createElement("option");
+                optionel.value = data[i];
+                optionel.appendChild(document.createTextNode(data[i]));
+                gugun.appendChild(optionel);
+            }
+            gugun.style.display="";
+            btnArea.style.display="";
+        }
+
+        function getArea(){
+            let area = document.getElementById("area");
+            let sido = document.getElementById("sidoSelect");
+            let gugun = document.getElementById("gugunSelect");
+            
+            area.value = sido.value + " " + gugun.value;
+        }
+
+    </script>
+</head>
+<body>
+    <div id = "sidoSelct">
+        <select name="" id="sidoSelect" onchange="changeSidoSelect();">
+        <option value="">대분류를 선택하세요.</option>
+        </select>
+
+        <select id="gugunSelect">
+            <option value="">중분류를 선택하세요.</option>
+        </select>
+
+        <label for="">
+            <button id="btnArea" name="btnArea" onclick="getArea()">선택</button>
+            선택한 지역: 
+            <input type="text" id="area" size="40">
+        </label>
+    </div>
+</body>
+</html>

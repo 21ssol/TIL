@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // setTimeout(function(){
+    //     alert('3초가 지났습니다.'); // 3초 후 한번 호출
+    // },3000);
+
+    let intervalld = setInterval(()=>{alert(`${new Date()}`)},1000);
+    //1초마다 한번 호출
+
+    setTimeout(() => {clearInterval(intervalld);}, 10000); //clear로 지우기
+</script>
+<body>
+    
+</body>
+</html>

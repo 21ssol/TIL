@@ -1,0 +1,39 @@
+<!--alt+b 말고 서버로 연결해야한다.
+마우스 우클릭, open with live server -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopping</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="src/main.js" defer></script>
+  </head>
+  <body>
+    <!--logo-->
+    <img src="img/logo.png" alt="logo" class="logo">
+
+    <!--buttons-->
+   <section class="buttons"> <!--커스터머 property 만든다 (data-아무이름) -->
+   <!--data-key, value 사용자가 정의할 수 있음-->
+    <button class="btn">
+     <img 
+     src="img/blue_t.png" 
+     alt="tshirt" 
+     class="imgBtn" 
+     data-key='type'  
+     data-value='tshirt'/>
+   </button>
+   <button class="btn"><img src="img/blue_p.png" alt="pants" class="imgBtn" data-key='type' data-value='pants'/></button>
+   <button class="btn"><img src="img/blue_s.png" alt="skirt" class="imgBtn" data-key='type' data-value='skirt'/></button>
+   <button class="btn colorBtn blue" data-key='color' data-value='blue'>Blue</button>
+   <button class="btn colorBtn yellow" data-key='color' data-value='yellow'>Yello</button>
+   <button class="btn colorBtn pink" data-key='color' data-value='pink'>Pink</button>
+  </section>
+   <!--Items-->
+    <ul class="items">
+      
+    </ul>
+  </body>
+</html>

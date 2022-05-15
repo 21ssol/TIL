@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h2>for 문의 사용 입니다.</h2>
+    <hr>
+    <script>
+        let innum, i;
+
+        innum = prompt("1부터 9사이의 수를 입력하세요", 2);
+        pl(`입력한 숫자: ${innum} 에 대한 구구단 <br><br>`);
+
+        for(i=1; i<=9; i++){
+            pl(`${innum} X ${i} = ${innum*i}`);
+        }
+
+        function pl(str){
+            document.write(`${str} <br>`);
+        }
+
+    </script>
+</body>
+</html>

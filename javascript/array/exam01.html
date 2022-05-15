@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script>
+        function check(){
+            let f = document.frm;
+            let str = f.data.value;  //textarea 에있는 글씨를 가져온다.
+            //console.log(str);
+
+            let warning = ['가을', '단풍'];
+
+            for(let i=0; i<warning.length; i++){
+                let sw = true;
+                while (sw){  //무한반복일동안
+                    let index = str.indexOf(warning[i]);
+                    if(index >= 0){
+                        str = str.replace(warning[i], "XX");
+                    }else{
+                        sw = false;
+                    }
+                }
+            }
+            f.panel.value = str;
+        }
+    </script>
+</head>
+<body>
+    <form name="frm">
+        <textarea name="data" cols="70" rows="9">
+가을에는 단풍 여행을 내장산으로 가야한다고 한다.
+내장산은 단풍이 웅장하고 걷기편해 산책하기 좋다.
+단풍 나무와 함께 감나무에 감이 주렁주렁 열려 가을을 느끼기에 아주 좋다.
+하지만 단풍과 기암 괴석의 경치를 감사하고 싶으면 가을 설악의 단풍을
+추천한다. 하지만 교통체증이 너무 심해 새벽 2시 출발을 각오해야 한다.
+        </textarea>
+        <br><br>
+        <button type = "button" onclick="check()">변환</button>
+        <br><br>
+        <textarea name="panel" rows="10" cols="70"></textarea>
+    </form>
+</body>
+</html>

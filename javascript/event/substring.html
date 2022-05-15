@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script src ="../utility.js">
+
+    </script>
+</head>
+<body>
+    <script>
+        let str = '123ABC 가나다/가나다';
+        pl(`${str}`);
+        pl(`${str.substring(0,3)}`);
+        pl(`${str.substring(3,6)}`);
+        pl(`${str.substring(7)}`);
+        p(str.lastIndexOf("가나다"));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylee.css">
+    <script>
+        window.onload = function(){
+            let word1 = document.getElementById('word1');
+            let result1 = document.getElementById("result1");
+            word1.innerHTML = 'test.jsp';
+            let str = word1.innerHTML;
+
+            if (str.lastIndexOf('.jsp')>=0){
+                result1.innerHTML='전송할 수 없는 형식입니다.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <H1>자바 스크립트 확장자 검사</H1><br><br>
+    <DIV id="panel">
+        <span id="word1"></span>:<span id="result1"></span><br>
+    </div>
+</body>
+</html>

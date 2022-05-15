@@ -1,0 +1,21 @@
+* {
+    font-family :Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+table, th, td {
+    border: 1px solid rgb(62, 252, 138);
+    border-collapse: collapse;
+}
+th {
+    background-color: rgb(245, 231, 177);
+}
+table{
+    width: 70%;
+}
+
+.title{
+    font-size: 12;
+    color: rgb(0, 0, 0);
+    height: 18;
+    border: 1px dashed;
+}

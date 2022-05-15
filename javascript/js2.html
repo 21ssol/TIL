@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: gulim;
+            font-size: 22px;
+        }
+        span{
+            color: #ff0000;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <h2>if-else 제어구조</h2>
+    <hr>
+    <script>
+        let temp1 = 5, temp2 = 2;
+        let max, min;
+
+        if (temp1 >= temp2){
+            max = temp1;
+            min = temp2;
+        } else{
+            max = temp2;
+            min = temp1;
+        }
+
+        pl("");
+        pl(`큰값: ${max}`);
+        pl(`작은값: ${min}`);
+
+        function pl(str){
+            document.write("<span>");
+            document.write(str);
+            document.write("</span><br>");
+        }
+    </script>
+</body>
+</html>
