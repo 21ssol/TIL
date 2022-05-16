@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>How to create a JavaScript object array</p>
+    <p id="demo"></p>
+    <script>
+        let emp = [ {
+            "firstName":"John",
+            "lastName":"Doe"
+        },
+        {
+            "firstName":"Anna",
+            "lastName":"Smith"
+        },
+        {
+            "firstName":"peter",
+            "lastName":"Jones"
+        }];  //배열 선언
+
+        console.log(typeof(emp)); //객체
+        document.getElementById('demo').innerHTML = 
+        emp[0].firstName + " " + emp[0].lastName + '<br>' +
+        //object라서 가능함. 변수로 받으면 안된다.
+        
+        emp[1]["firstName"] + " " + emp[1]["lastName"];
+    </script>
+</body>
+</html>

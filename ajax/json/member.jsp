@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" %>  <!--한글 안깨지게 하는 코드-->
+<%@ page contentType="text/html; charset=UTF-8" %>
 {
         "code":"success"
         ,
