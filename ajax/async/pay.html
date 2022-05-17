@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="ajax.js" defer></script>
+    <script>
+        function send(id, passwd) {
+            const userStorage = new UserStorage();
+            userStorage  //비동기통신 시작
+            .loginUser(id, passwd)
+            .then(text =>{
+                let payList = document.getElementById("payList");
+                payList.innerHTML = text;
+            })
+            .catch(console.log)
+        }
+    </script>
+</head>
+<body>
+    <h2>급여 명세서</h2>
+    <br>
+    <div class="well well-sm" id="payList"></div>
+    <br>
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="id" class="form-group-lg">사원 ID:</label>
+            <input type="email" name="id" id="id" class="form-control" value="테스트">
+        </div>
+        <div class="form-group">
+            <label class="form-group-lg" for="pwd">비밀번호:</label>
+            <input type="password" class="form-control" id="pwd" value="테스트" name="passwd">
+        </div>
+        <div class="form-gruop">
+        <button type="button" class="btn btn-default"
+        onclick="send(this.form.id.value, this.form.passwd.value)">급여확인</button>
+        </div>
+    </form>
+</body>
+</html>

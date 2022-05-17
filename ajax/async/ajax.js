@@ -14,9 +14,11 @@ class UserStorage {
                 resolve(this.xhr.responseText);
             };
             this.xhr.onerror = () => {
+                //오류 시
                 reject(new Error(this.xhr.status));
             };
-            this.xhr.open('GET', `pay.jsp?id = ${id}&passwd = ${passed}`, true);
+            //url을 쓸 때는 띄어쓰기 금지!
+            this.xhr.open('GET', `pay.jsp?id=${id}&passwd=${passwd}`, true);
             this.xhr.send();
         });
     }
