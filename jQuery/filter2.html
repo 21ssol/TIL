@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    // eq는 0부터 시작
+    $("body").find("div").eq(2).addClass("blue");
+    $("body").find("div").slice(0,2).css("background", "yellow");
+    $("body").find("div").slice(3).css("background", "orange");
+});
+</script>
+<style>
+    div {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        float: left;
+        border: 2px solid blue;
+    }
+
+    .blue {
+        background: blue;
+    }
+</style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

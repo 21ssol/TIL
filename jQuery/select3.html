@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("input:not(:checked)+span").css("background-color", "yellow");
+    $("input").attr("disabled", "disabled"); //attr > input 태그 전부 찾아서 비활성화해라
+});
+</script>
+</head>
+<body>
+    <div><input type="checkbox" name="a"><span>Mary</span></input></div>
+    <div><input type="checkbox" name="b"><span>Icm</span></input></div>
+    <div><input type="checkbox" name="c" checked><span>Peter</span></input></div>
+</body>
+</html>

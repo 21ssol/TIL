@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("div button:only-child").text("Alone").css("border", "2px blue solid");
+});
+</script>
+<style>
+    div {
+        width: 100px;
+        height: 80px;
+        margin: 5px;
+        float: left;
+        background: #b9e;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <button>Sibling!</button>
+        <button>Sibling!</button>
+    </div>
+    <div>
+        <button>Sibling</button>
+    </div>
+    <div>
+        None
+    </div>
+    <div>
+        <button>Sibling!</button>
+        <button>Sibling!</button>
+        <button>Sibling!</button>
+    </div>
+    <div>
+        <button>Sibling</button>
+    </div>
+</body>
+</html>

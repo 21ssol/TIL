@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("div span:last-child")
+    .css({color:"red", fontSize:"80%"})
+    .hover(function(){   //hover은 마우스를 올렸을 때 > .hover(마우스 올렸을때, 마우스를 내려놓을때)
+        $(this).addClass("solast");  //this는 현재 마우스 올려놓은 div
+    }, function(){
+        $(this).removeClass("solast");
+    });
+});
+</script>
+<style>
+    span.solast{   /* .solast 는 클래스 속성 */
+        text-decoration: line-through;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <span>Glen,</span>
+        <span>Karl,</span>
+        <span>Brandon,</span>
+        <span>Sam</span>
+    </div>
+    <div>
+        <span>Glen,</span>
+        <span>Tane,</span>
+        <span>Ralph,</span>
+        <span>David</span>
+    </div>
+</body>
+</html>

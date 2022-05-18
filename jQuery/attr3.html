@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    // title=^f > f로 시작하는 속성에만 적용
+    $("[title ^='f']").css("color","red");
+    // '$= ~'는 ~로 끝나는 속성에 적용, letter로 끝나는 input 에 'a letter'를 삽입
+    $("input[name $= 'letter']").val("a letter");
+    //특정 속성이 지정한 값(man)을 포함하고 있는 태그
+    //$( "input[name*='man']" ).val( "has man in it!" );
+    // '~' 공백으로 주어진 단어를 포함하는 값으로 지정된 속성 선택
+   // $("input[name ~= 'man'").val("mr man is in it!");
+
+    //'|' 기호 사용하면 하이푼(-)기호도 포함(같은 단어)
+    $("input[name |= 'man']").val("man-news find!");
+});
+</script>
+</head>
+<body>
+    <ul>
+        <li title="first">텍스트 텍스트 텍스트 텍스트</li>
+        <li title="second">텍스트 텍스트 텍스트 텍스트</li>
+        <li title="thrid">텍스트 텍스트 텍스트 텍스트</li>
+        <li title="fourth">텍스트 텍스트 텍스트 텍스트</li>
+    </ul>
+
+    <input type="text" name="newletter">
+    <input type="text" name="milkman">
+    <input type="text" name="jobletter"> <br>
+
+    <input type="text" name="man-news">
+    <input type="text" name="milk man">
+    <input type="text" name="letterman2">
+    <input type="text" name="newmilk">
+</body>
+</html>

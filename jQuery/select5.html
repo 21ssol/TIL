@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("ul li:nth-child(2)").append("<span>-2nd!</span>");  //ul 모든 2번째에 span태그 추가
+    //ul에서 처음 찾아지는 3번째에 span태그 추가>> eq는 인덱스가 0부터 시작
+    $("ul li").eq(2).append("<span>-3rd!</span>")
+});
+</script>
+<style>
+    div {
+        float: left;
+    }
+    span {
+        color: blue;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>John</li>
+            <li>Karl</li>
+            <li>Brandon</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Sam</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Glen</li>
+            <li>Tane</li>
+            <li>Ralph</li>
+            <li>David</li>
+        </ul>
+    </div>
+</body>
+</html>

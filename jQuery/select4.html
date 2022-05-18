@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("td:empty")
+    //jQuery 체인 발생
+    .text("Was empty!")  //빈곳에다가 text를 넣어라
+    .css("background", "rgb(255,220,200)");
+});
+</script>
+<style>
+    table, td {
+        border: 1px solid black;
+    }
+    
+    td {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>TD#0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TD#2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>TD#5</td>
+        </tr>
+    </table>
+</body>
+</html>

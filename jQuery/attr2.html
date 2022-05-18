@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //속성에서도 '|'은 문자열과 같거나 문자열로 시작하여 하이푼(-)이 지정된 속성도 포함
+    $("a[hreflang|='en']").css("border", "3px dotted green");
+});
+</script>
+<style>
+    a {
+        /* inline-block  > 밑으로 내리기 */
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+    <a href="example.html" hreflang="en">Some text</a>
+    <a href="example.html" hreflang="en-UK">Some other text</a>
+    <a href="example.html" hreflang="english">will not be outlined</a>
+</body>
+</html>

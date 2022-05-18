@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>아코디언판넬</title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {  //페이지가 로딩됐을때 자동으로 처리되는 함수(pageOnload랑 비슷)
+    $("dd:not(:first)").css("display", "none");   //$는 찾는다는 의미, 첫번째 dd가 아닌것을 찾아서 안보이게
+    $("dl dt").click(function (){
+        if ($("+dd", this).css("display") == "none") { //this 현재 클릭하고있는 dt
+            $(this).siblings("dd").slideUp("slow");
+            $("+dd",this).slideDown("slow");
+        }
+    });
+});
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    dl{
+        width: 400px;
+        margin: 50px auto;
+    }
+
+    dl dt {
+        background-color: #7CADB6;
+        border-bottom: 1px solid #FFFFFF;
+        cursor: pointer;
+    }
+
+    dl dd {
+        border: 1px solid #7CADB6;
+        border-top: none;
+        height: 300px;
+    }
+</style>
+</head>
+<body>
+    <div id = "container">
+        <dl>  <!--이멧(emmet)사용-->
+            <dt>텍스트1</dt>
+            <dd>
+                <p>텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+            </dd>
+            <dt>텍스트2</dt>
+            <dd>
+                <p>텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+            </dd>
+            <dt>텍스트3</dt>
+            <dd>
+                <p>텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>

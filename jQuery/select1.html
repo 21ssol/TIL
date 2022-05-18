@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>전체태그</title>
+<style>
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //아이디 찾아서 사용
+    //$("#first , #third").css("color","red");
+    //li에 있는 자식태그(부모 바로 밑에 있는 태그만)
+    //$("li > strong").css("color","red");
+    //# : id가 second인거 찾기 +는 근접한거 찾기
+    //$("#second + li").css("color","red");
+    //빈공간은 자손,  > 은 자식
+    $('li:first').css('color', 'red');  // id를 찾아서 스타일(css)변경
+});
+</script>
+</head>
+<body>
+    <ul>
+        <li id="first"><strong>텍스트</strong> 텍스트 텍스트 텍스트 텍스트</li>
+        <li id="second"><em>텍스트</em> 텍스트 텍스트 텍스트 텍스트</li>
+        <li id="third"><span><strong>텍스트</strong></span> 텍스트 텍스트 텍스트 텍스트</li>
+        <li id="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+    </ul>
+
+</body>
+</html>

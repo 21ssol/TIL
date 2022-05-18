@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //:header > h1~h6까지의 태그
+    $(":header").css({background: "#ccc", color: "blue"});
+
+    //:contains(text) > 특정 text를 포함하고 있는 태그
+    $("div:contains('John')").css("text-decoration", "underline");
+
+    //:has > 특정 태그를 포함하고 있는 태그
+    $("div:has(p)").addClass("test");
+
+    //:parent > 하나 이상의 자식노드가 있는 요소를 모두 선택, fadeTo 시간에 따라 색이 변함
+    $("td:parent").fadeTo(3000, 0.3);  //.fadeTo(시간, 밝기)
+
+});
+</script>
+<style>
+    .test {
+        border: 3px inset red;
+    }
+    table, td {
+        border: 1px solid black;
+    }
+    td {
+        width: 50px;
+        background: rgb(93, 255, 93);
+    }
+</style>
+</head>
+<body>
+    <h1>Header 1</h1>
+    <p>Contents 1</p>
+    <h2>Header 2</h2>
+    <p>Contents 2</p>
+
+    <div>John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div><p>J. Ohn</p></div>
+
+    <table>
+        <tr>
+            <td>Value 1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Value 2</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

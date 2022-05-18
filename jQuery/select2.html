@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //'+'는 근접한 형제 '~'는 모든 요소
+    $('#prev ~ div').css("border", "3px groove blue");
+});
+</script>
+<style>
+    div, span{
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+        background: #bfa;
+        float: left;
+        font-size: 14px;
+    }
+    div#small{
+        width: 60px;
+        height: 25px;
+        font-size: 12px;
+        background: #fab;
+    }
+</style>
+</head>
+<body>
+    <div>div (doesn't match since before #prev)</div>
+    <span id="prev">span#prev</span>
+    <div>div sibling</div>
+    <div>div sibling
+        <div id="small">div niece</div>
+    </div>
+    <span>span sibling (not div)</span>
+    <div>div sibling</div>
+</body>
+</html>
