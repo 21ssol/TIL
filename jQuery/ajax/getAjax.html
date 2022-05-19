@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    td {
+        border: 1px solid gray;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //get방식
+    $.get("get.jsp",{"name":"가길동", "kuk":90, "eng":100},
+    function(data){
+        console.log(data);
+        let result = data;
+        console.log('Call Back Call:' + result.name);
+        $("#panel").append(`성명:${result.name}
+        국어:${result.kuk} 영어:${result.eng} 총점:${result.tot} 평균:${result.avg}`);
+    }, "json");
+});
+</script>
+</head>
+<body>
+    <div id="panel"></div>
+</body>
+</html>

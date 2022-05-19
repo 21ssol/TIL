@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("p").text("<b>Some</b> new text.");  //text 그대로 표기, 문자열로
+    $( "ul li" ).text(function( index ) {
+         return "item number " + ( index + 1 );
+});
+});
+</script>
+<style>
+    p {
+        color: blue;
+        margin: 8px;
+    }
+</style>
+</head>
+<body>
+    <p>Test Paragraph</p>
+    <ul>
+        <li>list item 1</li>
+        <li>list <strong>item</strong>2</li>
+    </ul>
+</body>
+</html>

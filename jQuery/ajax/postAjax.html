@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+function requestCheck() {
+    //id를 찾아서 value 값을 serialize로 다 받아옴
+    let param = $("#frmSungjuk").serialize();
+    console.log(`param:${param}`);
+    
+    //비동기통신 post방식으로 요청
+    $.post('get.jsp', param, function(data) {
+        console.log(data);
+        result = data;
+        console.log('Call Back Call: ' + result.name);
+        display(data);
+            },"json").  //함수의 결과가 json
+                fail(function(){
+                alert('error');
+    });
+}
+
+function display(result) {
+    $("#panel").text("") //text초기화
+    .append(
+        `성명:${result.name} 
+         국어:${result.kuk} 
+         영어:${result.eng}
+         총점:${result.tot}
+         평균:${result.avg}`
+    );
+}
+
+</script>
+</head>
+<body>
+    <div id="panel" align="center"></div>
+    <hr>
+    <form id="frmSungjuk">
+        성명: <input type="text" name="name"  value='가길동'/><br>
+        국어: <input type="text" name="kuk"  value='80'/><br>
+        영어: <input type="text" name="eng"  value='100'/><br><br>
+    
+        <button type="button" onclick='requestCheck()'>성적계산</button>
+
+    </form>
+</body>
+</html>

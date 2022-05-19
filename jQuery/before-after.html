@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    div {
+        background: aquamarine;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //before : 태그 밖 앞에 html을 삽입
+    $("div").first().before("<b>Hello</b>");
+    //after : 태그 밖 뒤에 html을 삽입
+    $("div").last().after("<b>Hello</b>")
+});
+</script>
+</head>
+<body>
+    <div>is what I said</div>
+    <div>is what I said</div>
+
+</body>
+</html>

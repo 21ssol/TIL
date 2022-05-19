@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    img {
+    height: 100px;
+    float: left;
+  }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //외부에 있는 API를 가져와서 사용할 때
+    let flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    $.getJSON(flickerAPI,{ //요청url 뒤에 객체형태 가져오기[tags, tagmode, format]
+        //서버에서 받는 데이터이다.
+        tags:"mount rainier",
+        tagmode:"any",
+        format:"json"
+    })
+    //요청이 다 끝났을 때 data에다가 받아옴
+    .done(function(data){
+        console.log(data.items[0]);  //첫번쨰 items만 받아옴
+        //each > for each 문처럼 사용할 수 있는 함수
+        $.each( data.items, function( i, item ) {
+            //img를 찾고 생성해서.attr로 속성주기
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+});
+</script>
+</head>
+<body>
+    <div id="images"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    p {
+        background-color: yellow;
+    }
+
+    span {
+        background-color: aqua;
+    }
+    #foo,#foo2 {
+        background-color: blue;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //prepenTo : 요소 안의 앞으로 이동
+    $("span").first().prependTo("#foo");
+    //appendTo : 요소 안의 뒤로 이동
+    $("span").last().appendTo("#foo2");
+});
+</script>
+</head>
+<body>
+    <div id="foo">Foo!</div>
+    <div id="foo2">Foo!</div>
+    <span>I have somthing to say ...</span>
+    <span>I have not somthing to say ...</span>
+</body>
+</html>

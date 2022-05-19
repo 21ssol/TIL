@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    p {
+        color:red;
+        margin: 5px;
+        cursor: pointer;
+        background-color: #dad;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    /*hover p태그에 마우스를 올려놓았을 때*/
+    p:hover {
+        background: yellow;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //p태그 클릭했을 때 스르륵 올라간다.
+    $("p").click(function(){
+        $(this).slideUp();
+    });
+
+    //버튼 누르면 숨겨졌다가 나시 나타남 "slow" 옵션임
+    $("button").click(function() {
+        $("p").toggle("slow");
+    })
+});
+</script>
+</head>
+<body>
+    <button>Toggle em'</button>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+    <p>Yet one more Paragraph</p>
+</body>
+</html>

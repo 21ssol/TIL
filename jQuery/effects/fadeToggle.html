@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("button").first().click(function(){
+        //fadeToggle > 보여졌다가 숨겨짐
+        $("p").first().fadeToggle("slow", "linear");
+    });
+    $("button").last().click(function(){
+        $("p").last().fadeToggle("fast", function(){
+            $("#log").append("<div>finished</div>");
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <button>fadeToggle p1</button>
+    <button>fadeToggle p2</button>
+    <p>This paragraph has a slow, linear fade.</p>
+    <p>This paragraph has a animation.</p>
+    <div id="log"></div>
+</body>
+</html>

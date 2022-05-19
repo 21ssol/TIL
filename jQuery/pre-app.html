@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //prepend는 태그안의 앞에 html 삽입
+    $("p").first().prepend("<b>Hello </b>");
+    //append는 태그 안의 맨뒤에 html 삽입
+    $("p").last().append("<strong> Hello</strong>")
+});
+</script>
+<style>
+    p {
+        background: yellow;
+    }
+</style>
+</head>
+<body>
+    <p>there, friend!</p>
+    <p>amigo!</p>
+</body>
+</html>

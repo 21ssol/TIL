@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    div {
+        width: 80px;
+        height: 80px;
+        display: none;
+    }
+    div#div1 {
+        background-color: red;
+    }
+    div#div2{
+        background-color: green;
+    }
+    div#div3{
+        background-color: blue;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("button").first().click(function(){
+        //fadeIn > 보여지는 효과
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+    });
+    //fadeOut > 사라지는 효과
+    $("button").last().click(function(){
+        $("#div1").fadeOut();
+        $("#div2").fadeOut("slow");
+        $("#div3").fadeOut(3000);
+    });
+});
+</script>
+</head>
+<body>
+    <p>Demonstrate fadeIn()/fadeOut with different parameters.</p>
+
+    <button>Click to fade in boxes</button><br>
+    <button>Click to fade out boxes</button><br>
+
+    <div id="div1"></div>
+    <br>
+    <div id="div2"></div>
+    <br>
+    <div id="div3"></div>
+</body>
+</html>

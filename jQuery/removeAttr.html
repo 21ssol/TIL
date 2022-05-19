@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    p {
+        margin: 8px;
+        font-size: 16px;
+    }
+    .selected {
+        color: blue;
+    }
+    .highlight {
+        background: yellow;
+    }
+
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //속성값을 , 뒤에 있는 것으로 변경
+    $("a").first().attr("href", "http://daum.net/");
+    //지정한 속성값으로 가져옴
+    $("a").first().text($("a").attr("href"));
+    //지정한 속성값을 제거함(_blank 라는 속성을 제거함)
+    $("a").last().removeAttr("target");
+
+    //class 속성을 추가/제거
+    $("p").addClass("selected");
+    $("p").first().removeClass("selected");
+    $("p").last().addClass("highlight");
+
+
+});
+</script>
+</head>
+<body>
+    <a href="http://naver.com">링크</a>
+    <!--_blank는 새로운 페이지로 열림-->
+    <a href="http://naver.com/" target="_blank">링크</a><hr>
+    * 클래스 속성 추가/제거
+
+    <p>Hello</p>
+    <p>and</p>
+    <p>Goodbye</p>
+
+</body>
+</html>

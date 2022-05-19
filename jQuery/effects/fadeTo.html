@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //불투명해짐
+    $("p").first().click(function(){
+        $(this).fadeTo("slow", 0.33);
+    });
+});
+</script>
+</head>
+<body>
+    <p>Click this paragraph to see it fade.</p>
+    <p> Compare to this one that won't fade.</p>
+</body>
+</html>

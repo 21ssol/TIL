@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("#hide").click(function (){
+        $("p").hide(3000);
+    })
+    $("#show").click(function (){
+        $("p").show();
+    });
+});
+</script>
+</head>
+<body>
+    <p>If you click on the "Hide" button, I will disappear.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+</body>
+</html>

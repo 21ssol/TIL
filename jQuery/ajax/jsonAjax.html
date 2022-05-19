@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    td {
+        border: 1px solid gray;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+function requestCheck() {
+    //text기반의 이름과 value값을 파라미터로 가져옴
+    let param = $("#frmSungjuk").serialize();
+    $.ajax({
+        url:'get.jsp',
+        dataType:"json",
+        data:param,
+        success:function (data){  //data는 json객체 나중에 parse해야한다.
+            console.log(`data: ${data}, typeOf: ${typeof data}`);
+
+            display(data);
+            console.log(`Call Back Call: ${result.name}`);
+
+           
+
+        }, statusCode:{
+            404: function(){
+                alert("page not found");
+            }, 
+            500:function(){
+                alert("page error");
+            }
+        }
+    });
+}
+
+function display(result) {
+    $("#panel").text("").append(
+            `성명: ${result.name}
+             국어:${result.kuk}
+             영어:${result.eng}
+             총점:${result.tot}
+             평균:${result.avg}`
+            );
+    
+}
+
+</script>
+</head>
+<body>
+    <div id="panel" align="center"></div>
+    <hr>
+    <form id="frmSungjuk">
+        성명: <input type="text" name="name"  value='가길동'/><br/>
+        국어: <input type="text" name="kuk"  value='80'/><br/>
+        영어: <input type="text" name="eng"  value='100'/><br/><br/>
+    
+        <button type="button" onclick='requestCheck()'>성적계산</button>  
+    
+    </form>
+</body>
+</html>

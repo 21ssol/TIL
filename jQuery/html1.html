@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $("p").click(function(){
+        let htmlString = $(this).html();  //.html로 뽑아오면 태그까지 뽑아옴
+        $(this).text(htmlString);   //text로 가져옴
+    })
+});
+</script>
+<style>
+    p {
+        margin: 8px;
+        font-size: 20px;
+        color: blue;
+        cursor: pointer;
+    }
+    b {
+        text-decoration: underline;
+    }
+    button {
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <p><b>Click</b>to change the <span id="tag">html</span></p>
+    <p>to a <span id="text">text</span>node.</p>
+    <p>This <button name="nada">button</button>does nothing.</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+    div {
+        border: 2px solid blue;
+    }
+    p {
+        background: yellow;
+        margin: 4px;
+    }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    //slice(n,m-1)까지 잘라서 wrap감싼다(div 태그를)
+    $("p").slice(0,3).wrap("<div></div>");
+    //잘라낸 다음에 한번에 div로 감싼다
+    $("p").slice(3,6).wrapAll("<div></div>");
+    //잘라내서 요소 각각을 b로 감싼다
+    $("p").slice(6,10).wrapInner("<b></b>");
+});
+</script>
+</head>
+<body>
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+    <hr>
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+    <hr>
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+</body>
+</html>
