@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.study.member.MemberMapper">
+
+<select id="total" parameterType="Map" resultType="int">
+        select count(*) from member
+                <where>
+                        <choose>
+                                <when test="col=='mname'">
+                                        mname like concat('%', #{word} ,'%')
+                                </when>
+                                <when test="col=='id'">
+                                        id like concat('%', #{word} ,'%')
+                                </when>
+                                <when test="col=='email'">
+                                        email like concat('%', #{word} ,'%')
+                                </when>
+                        </choose>
+                </where>
+        </select>
+        <select id="list" parameterType="Map"
+                resultType="com.study.member.MemberDTO">
+                SELECT id, mname, tel, email, zipcode, address1,
+                address2, fname
+                FROM member
+                <where>
+                        <choose>
+                                <when test="col=='mname'">
+                                        mname like concat('%', #{word},'%')
+                                </when>
+                                <when test="col=='id'">
+                                        id like concat('%', #{word},'%')
+                                </when>
+                                <when test="col=='email'">
+                                        email like concat('%', #{word},'%')
+                                </when>
+                        </choose>
+                </where>
+                ORDER BY mdate DESC
+                limit #{sno}, #{eno}
+ 
+        </select>
+ 
+        <update id="updateFile" parameterType="Map">
+                update member
+                set fname = #{fname}
+                where id = #{id}
+        </update>
+        <update id="update" parameterType="com.study.member.MemberDTO">
+                update member
+                set tel = #{tel},
+                email = #{email},
+                zipcode = #{zipcode},
+                address1 = #{address1},
+                address2 = #{address2},
+                job = #{job}
+                where id = #{id}
+        </update>
+ 
+        <select id="read" parameterType="String"
+                resultType="com.study.member.MemberDTO">
+                select *
+                from member
+                where id = #{id}
+        </select>
+ 
+        <select id="getGrade" parameterType="String" resultType="Map">
+                select grade, mname
+                from member
+                where id = #{id}
+        </select>
+        <select id="loginCheck" parameterType="Map" resultType="int">
+                select
+                count(*) from member
+                where id = #{id}
+                and passwd = #{passwd}
+        </select>
+ 
+        <select id="duplicatedId" parameterType="String"
+                resultType="int">
+                SELECT COUNT(id)
+                FROM member
+                WHERE id=#{id}
+        </select>
+        <select id="duplicatedEmail" parameterType="String"
+                resultType="int">
+                SELECT COUNT(email)
+                FROM member
+                WHERE email=#{email}
+        </select>
+ 
+        <insert id="create" parameterType="com.study.member.MemberDTO">
+                INSERT INTO member(id, passwd, mname, tel, email, zipcode,
+                address1, address2, job, mdate, fname, grade)
+                VALUES(#{id}, #{passwd},#{mname}, #{tel}, #{email}, #{zipcode},
+                #{address1}, #{address2}, #{job}, sysdate(), #{fname}, 'H')
+        </insert>
+
+</mapper>
