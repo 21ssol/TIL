@@ -4,7 +4,7 @@ function getList(param) {  // 댓글 목록을 비동기 통신으로
 	let sno = param.sno;
 	let eno = param.eno;
 	return fetch(`/review/list/${contentsno}/${sno}/${eno}`, { method: 'get' })
-		.then(response => response.json())  // 리턴되어지는 값을 json으로 받는다.
+		.then(response => response.json())  // 리턴되어지는 값(결과값)을 json으로 받는다.
 		.catch(console.log)  // 문제시 출력. 프로미스로 받는다.(.then)
 }
 

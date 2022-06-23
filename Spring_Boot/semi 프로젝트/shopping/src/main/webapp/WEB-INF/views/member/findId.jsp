@@ -11,7 +11,7 @@ $(function() {
 		
 		let mname = document.getElementById("mname").value;
 		let email = document.getElementById("email").value;
-		//alert("hi");
+		//alert($("#mname").val() + "," + $("#email").val());
 
 		let url = "http://localhost:8000/member/idFind?mname="+mname+"&email="+email;
 		 fetch(url)
@@ -37,22 +37,20 @@ $(function() {
 				<label class="control-label col-sm-2" for="mname">이름</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="mname"
-						placeholder="Enter mname" name="mname" required="required"
-						value='${c_mname_val}'>
+						placeholder="Enter mname" name="mname" required="required">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="email">이메일</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="email"
+					<input type="email" class="form-control" id="email"
 						placeholder="Enter email" name="email" required="required">
 				</div>
 			</div>
-
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-8">
-					<button type="button" class="btn btn-default" id="findId">아이디
-						찾기</button>
+					<button type="button" class="btn btn-default" id="findId">찾기</button>
+					<button type="button" class="btn btn-default" onclick="location.href='/member/findPw'">패스워드 찾기</button>
 				</div>
 			</div>
 		</form>

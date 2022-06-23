@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -22,13 +24,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.study.review.ReviewController;
 import com.study.utility.Utility;
 
 @Controller
 public class MemberController {
+  private static final Logger log = LoggerFactory.getLogger(MemberController.class); // 로그기록
+  
   @Autowired
   @Qualifier("com.study.member.MemberServiceImpl")
   private MemberService service;
+  
+  
+  @GetMapping("/member/read")
+  public String read(Model model, String id) {
+    
+         MemberDTO dto = service.read(id);
+         
+         //log.info("dto", dto);
+        
+         model.addAttribute("dto", dto);
+        
+     return "/member/read";
+    }
+  
   
   // 비밀번호찾기
  @GetMapping("/member/pwFind")
@@ -46,6 +65,7 @@ public class MemberController {
  
  @GetMapping("/member/findPw")
  public String findPw() {
+   
    return "/member/findPw";
  }
   
@@ -66,6 +86,7 @@ public class MemberController {
  
  @GetMapping("/member/findId")
  public String findId() {
+   
    return "/member/findId";
  }
   
@@ -232,11 +253,8 @@ public class MemberController {
     if (cnt > 0) {
 
       if (map.get("rurl") != null && !map.get("rurl").equals("")) {
-        model.addAttribute("bbsno", map.get("bbsno"));
+        model.addAttribute("contentsno", map.get("contentsno"));
         model.addAttribute("nPage", map.get("nPage"));
-        model.addAttribute("nowPage", map.get("nowPage"));
-        model.addAttribute("col", map.get("col"));
-        model.addAttribute("word", map.get("word"));
 
         return "redirect:" + map.get("rurl");
       } else {

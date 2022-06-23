@@ -29,8 +29,8 @@ function replaceAll(str, searchStr, replaceStr) { // replaceAll 함수
 }
 
 let param = '';
-param = "nPage=" + nPage;
-param += "&contentsno=" + contentsno;
+param = "nPage=" + nPage;  //변수에 값을 넣음
+param += "&contentsno=" + contentsno;  //detail.jsp 에서 선언한 변수를 가져다가 씀
 
 function showPage() {
 	getPage(param)
@@ -85,19 +85,19 @@ modalRegisterBtn.on("click", function(e) {
 			modal.find("input").val("");
 			modal.modal("hide");
 
-			showList();
-			showPage();
+			showList();  //목록 불러오고
+			showPage();  // 페이지를 보여줌
 
 		}); //end add
 
 }); //end modalRegisterBtn.on
 
 //댓글 조회 클릭 이벤트 처리 
-$(".chat").on("click", "li", function(e) {
+$(".chat").on("click", "li", function(e) {  //클릭한 li의 값을 가져옴
 
 	let rnum = $(this).data("rnum");
 
-	get(rnum)  // 비동기통신 요청
+	get(rnum)  // 비동기통신 요청, 결과를 get으로 뽑아옴
 		.then(review => {
 
 			modalInputContent.val(review.content);
@@ -116,14 +116,14 @@ $(".chat").on("click", "li", function(e) {
 });
 
 // 댓글 수정
-modalModBtn.on("click", function(e) {
+modalModBtn.on("click", function(e) {  //수정
 	
 	if (id==""){
 		alert("로그인후 이용해주세요")
 		return;
 	}
 
-	let review = { rnum: modal.data("rnum"), content: modalInputContent.val() };
+	let review = { rnum: modal.data("rnum"), content: modalInputContent.val() }; //자바 스크립트 객체
 	update(review)
 		.then(result => {
 			modal.modal("hide");

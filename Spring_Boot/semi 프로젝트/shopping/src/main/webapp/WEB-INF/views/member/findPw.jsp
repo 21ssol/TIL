@@ -51,8 +51,8 @@ $(function() {
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-8">
-					<button type="button" class="btn btn-default" id="findPw">패스워드
-						찾기</button>
+					<button type="button" class="btn btn-default" id="findPw">찾기</button>
+					<button type="button" class="btn btn-default" onclick="location.href='/member/findId'">아이디 찾기</button>
 				</div>
 			</div>
 		</form>

@@ -83,7 +83,8 @@ public class ContentsController {
   }
   
   @GetMapping("/contents/detail/{contentsno}")
-  public String detail(@PathVariable("contentsno") int contentsno, Model model, HttpServletRequest request) {
+  public String detail(@PathVariable("contentsno") int contentsno, Model model, 
+      HttpServletRequest request) {
       
      model.addAttribute("dto",service.detail(contentsno));
      
@@ -105,7 +106,6 @@ public class ContentsController {
 
       /* 댓글 처리 끝 */
      
-    
       return "/contents/detail";
   }
   

@@ -11,6 +11,17 @@
     <uri>/ELFunctions</uri>
     
     <function>
+		<description>직업 이름 가져오기</description> 
+        <name>jobname</name>   <!-- jsp에서 쓰는 네임 -->
+        <function-class>                   
+            com.study.utility.Utility 
+        </function-class> 
+        <function-signature>    
+            java.lang.String getCodeValue(java.lang.String) 
+        </function-signature>    
+    </function>
+    
+    <function>
 		<description>댓글 수 보여주기</description> 
         <name>rcount</name>  
         <function-class>                   

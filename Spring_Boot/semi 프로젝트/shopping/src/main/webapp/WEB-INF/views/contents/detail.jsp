@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
@@ -8,6 +7,7 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="/css/style.css">
+<script type="text/javascript" src = "/js/cart.js"></script>
 <script type="text/javascript">
 	function cart() {
 		if ('${sessionScope.id}' == '') { //로그인이 안된거
@@ -16,6 +16,28 @@
 			return;
 		}
 		// 카트 테이블에 등록확인 창 보여주기(비동기로 구현)
+		let count = document.getElementById('qty').value;   //$('#qty').val() 랑 같은 의미
+		let select = document.querySelector('.form-select');
+		let i = select.selectedIndex;   //select의 인텍스 값을 가져옴
+		
+		if (i==0 && !select.disabled){
+			alert("사이즈를 선택하세요.");
+			select.focus();
+			return
+		} else if(select.disabled) {
+			select[i].value=0;
+		}
+		
+		let param = {            //파람을 json형식으로
+				contentsno : '${dto.contentsno}', 
+				count : count,
+				size : select[i].value
+		}
+		
+		addCart(param)
+		.then(result => alert(result))
+		.catch(console.log);
+		
 	}
 
 	function order() {
@@ -29,7 +51,6 @@
 </script>
 </head>
 <body>
-
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3">
@@ -44,13 +65,14 @@
 					<img src="/svg/rulers.svg"> 사이즈 및 수량
 				</h4>
 				<ul class="list-group">
-					<li class="list-group-item">사이즈 : <c:choose>
+					<li class="list-group-item"> 사이즈 : 
+					<c:choose>
 							<c:when test="${dto.cateno == 1 }">
 								<select class="form-select" aria-label="Default select example">
 									<option selected>사이즈 선택</option>
-									<option value="1">L</option>
-									<option value="2">M</option>
-									<option value="3">S</option>
+									<option value="L">L</option>
+									<option value="M">M</option>
+									<option value="S">S</option>
 								</select>
 							</c:when>
 							<c:when test="${dto.cateno == 2 }">
@@ -74,11 +96,13 @@
 						</c:choose>
 					<li class="list-group-item">가격 : ${dto.price }
 					<li class="list-group-item">재고 : ${dto.stock }
-					<li class="list-group-item">수량 : <input type="number"
-						name="quantity" min=0 max=20 value="1">
-					<li class="list-group-item"><a href="javascript:cart()"> <img
-							class='btn' src="/svg/cart4.svg" /></a> <a href="javascript:order()">
-							<img class='btn' src="/svg/bag-heart-fill.svg" />
+					<li class="list-group-item">수량 : 
+					<input type="number" name="quantity" min=0 max=20 value="1" id='qty'>
+					<li class="list-group-item">
+					<a href="javascript:cart()"> 
+					<img class='btn' src="/svg/cart4.svg" /></a> 
+					<a href="javascript:order()">
+					<img class='btn' src="/svg/bag-heart-fill.svg" />
 					</a> <a href="javascript:history.back()"> <img class='btn'
 							src="/svg/arrow-return-left.svg" /></a>
 					<li class="list-group-item">
@@ -148,11 +172,11 @@
 			<!-- /.modal -->
 			<!-- 페이지 로딩시 댓글 목록 처리-->
 			<!-- jstl는 internal javascript에서 사용가능 -->
-			<script>
-  let contentsno = "${dto.contentsno}"; 
+<script>
+  let contentsno = "${dto.contentsno}"; <!-- el jsp표현식, 컨트롤러에서 가져옴-->
   let sno = "${sno}";
   let eno = "${eno}";
- <!-- 댓글용 paging, 게시판 검색 -->
+ <!-- 댓글용 paging -->
   let nPage = "${nPage}";
   let id = "${sessionScope.id}";
  </script>
