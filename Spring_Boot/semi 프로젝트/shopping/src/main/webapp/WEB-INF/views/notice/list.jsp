@@ -44,22 +44,14 @@
      </select>
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Enter 검색어" 
-      name="word" value="${word}">
+      <input type="text" class="form-control" placeholder="Enter 검색어" name="word" value="${word}">
     </div>
     <button type="submit" class="btn btn-default" >검색</button>
-    
-    <c:choose>
-    <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
-    
+    <c:if test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
     <div class="form-group">
      <button type="button" class="btn btn-default" onclick="location.href='./create'">등록</button>
      </div>
-     </c:when>
-     <c:otherwise>
-     
-     </c:otherwise>
-     </c:choose>
+     </c:if>
   </form>
 
   <table class="table table-striped">

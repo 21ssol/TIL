@@ -47,6 +47,20 @@
 			return;
 		}
 		// 주문서 작성으로 이동 주문생성(비동기 통신)
+		let count = document.getElementById('qty').value;   //$('#qty').val() 랑 같은 의미
+		let select = document.querySelector('.form-select');
+		let i = select.selectedIndex;   //select의 인텍스 값을 가져옴
+		
+		if (i==0 && !select.disabled){
+			alert("사이즈를 선택하세요.");
+			select.focus();
+			return
+		} else if(select.disabled) {
+			select[i].value=0;
+		}
+		
+		let url = "/order/create/order/${dto.contentsno}/"+count+"/"+select[i].value;
+		location.href=url;
 	}
 </script>
 </head>

@@ -22,4 +22,16 @@ public class CartServiceImpl implements CartService {
     return mapper.list(id);
   }
 
+  @Override
+  public void delete(int cartno) {
+    // TODO Auto-generated method stub
+    mapper.delete(cartno);
+  }
+
+  @Override
+  public void deleteAll(String id) {
+    // TODO Auto-generated method stub
+    mapper.deleteAll(id);
+  }
+
 }

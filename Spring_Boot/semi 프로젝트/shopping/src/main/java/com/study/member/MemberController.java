@@ -40,9 +40,7 @@ public class MemberController {
   public String read(Model model, String id) {
     
          MemberDTO dto = service.read(id);
-         
          //log.info("dto", dto);
-        
          model.addAttribute("dto", dto);
         
      return "/member/read";
@@ -98,7 +96,6 @@ public class MemberController {
     if(id==null) {
          return "redirect:/member/login/";
     }else {
-    
          MemberDTO dto = service.mypage(id);
         
          model.addAttribute("dto", dto);

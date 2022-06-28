@@ -23,7 +23,7 @@ select * from cart;
 
 select 
 c.contentsno, c.pname, c.price, c.filename, 
-t.cartno, t.size, t.count, t.id
+t.cartno, t.size, t.count
 from contents c inner join cart t
 on c.contentsno = t.contentsno
-where id = 'user1';
+where t.id = 'user1';
